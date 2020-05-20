@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
+// * HitoryHook
+import TokenHook from '../../Hooks/TokenHook'
 
 export default props => {
-  console.log('called........', props)
-  return <div id='login'>Dashboard</div>
+  const [loading, setLoadingValue] = useState(true)
+  let result = TokenHook()
+  useEffect(() => {
+    setLoadingValue(result)
+  }, [result])
+  return <div id='login'>{!loading && 'Dashboard'}</div>
 }
