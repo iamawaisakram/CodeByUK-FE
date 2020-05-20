@@ -1,18 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { RecoilRoot } from 'recoil';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { RecoilRoot } from 'recoil'
 
-// * App File
-import CharacterCounter from './App';
+// * Routes
+import Routes from './Routes'
 
 // * Styling
-import './index.css';
+import './index.css'
 
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
-      <CharacterCounter />
+      <Routes />
     </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
