@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 // * Containers
@@ -7,9 +7,6 @@ import Signup from '../Containers/Signup'
 import Dashboard from '../Containers/Dashboard'
 
 function Routes() {
-  useEffect(() => {})
-  useLayoutEffect(() => {}, [])
-
   return (
     <Router>
       <Switch>

@@ -16,7 +16,9 @@ const UserRoutes = {
 // ***************************** DATA
 const DataRoutes = {
   ADD_DATA: `${DataSlug}/add-data`,
-  ADD_REMINDER: `${DataSlug}/add-reminder`
+  GET_DATA_ENTRIES: `${DataSlug}/get-data-entries`,
+  ADD_REMINDER: `${DataSlug}/add-reminder`,
+  GET_REMINDER_ENTRIES: `${DataSlug}/get-reminder-entries`
 }
 
 // ***************************** EXPORT

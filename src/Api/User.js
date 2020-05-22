@@ -1,8 +1,3 @@
-import { useRecoilState } from 'recoil'
-
-// * Recoil Atoms
-import { AllUsersAtom, MyProfileAtom } from '../Recoil/User/Atoms'
-
 // * Axios Wrapper
 import AxiosWrapper from './AxiosWrapper'
 
@@ -27,21 +22,13 @@ export const RegisterAPI = data => {
 }
 
 export const GetAllUsersAPI = () => {
-  const [allUsers, setAllUsers] = useRecoilState(AllUsersAtom)
   AxiosWrapper.GET(UserRoutes.ALL)
-    .then(response => {
-      console.log('result', response)
-      setAllUsers(response.data.users)
-    })
+    .then(response => response.data.users)
     .catch(e => console.log(e.response.data))
 }
 
 export const CurrentUserProfileAPI = () => {
-  const [myProfile, setMyProfile] = useRecoilState(MyProfileAtom)
   AxiosWrapper.GET(UserRoutes.ME)
-    .then(response => {
-      console.log('result', response)
-      setMyProfile(response.data.user)
-    })
+    .then(response => response.data.user)
     .catch(e => console.log(e.response.data))
 }

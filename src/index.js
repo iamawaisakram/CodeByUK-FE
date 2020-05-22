@@ -11,7 +11,9 @@ import './index.css'
 ReactDOM.render(
   <React.StrictMode>
     <RecoilRoot>
-      <Routes />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <Routes />
+      </React.Suspense>
     </RecoilRoot>
   </React.StrictMode>,
   document.getElementById('root')
