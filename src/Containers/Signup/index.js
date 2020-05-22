@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+
+// * Custom Hooks
+import { CheckIfTokenExists } from '../../Hooks/TokenHook'
 
 // * Api calls
 import { RegisterAPI } from '../../Api/User'
@@ -11,6 +15,9 @@ export default props => {
   const [address, setAddress] = useState('')
   const [town, setTown] = useState('')
   const [postcode, setPostcode] = useState('')
+
+  let history = useHistory()
+  CheckIfTokenExists()
 
   const signupUser = () => {
     RegisterAPI({

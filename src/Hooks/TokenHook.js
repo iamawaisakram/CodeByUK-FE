@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom'
 
-function TokenHook() {
+export default () => {
   let history = useHistory()
   let token = localStorage.getItem('token')
   if (!token) {
@@ -9,4 +9,11 @@ function TokenHook() {
   return false
 }
 
-export default TokenHook
+export const CheckIfTokenExists = () => {
+  let history = useHistory()
+  let token = localStorage.getItem('token')
+  if (token) {
+    history.push('/')
+  }
+  return false
+}

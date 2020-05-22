@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+
+// * Custom Hooks
+import { CheckIfTokenExists } from '../../Hooks/TokenHook'
 
 // * Api calls
 import { LoginAPI } from '../../Api/User'
@@ -7,8 +11,12 @@ export default props => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const loginUser = () => {
-    LoginAPI({ email, password })
+  let history = useHistory()
+  CheckIfTokenExists()
+
+  const loginUser = async () => {
+    let result = await LoginAPI({ email, password })
+    if (result) history.push('/')
   }
 
   return (

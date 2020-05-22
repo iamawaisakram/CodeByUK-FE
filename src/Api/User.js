@@ -12,10 +12,10 @@ import { UserRoutes } from './ApiRoutes'
 // TODO: Send Toaster here on error and success(if required)
 
 export const LoginAPI = data => {
-  AxiosWrapper.POST(UserRoutes.LOGIN, data)
+  return AxiosWrapper.POST(UserRoutes.LOGIN, data)
     .then(response => {
-      console.log('result', response)
-      // response.data
+      localStorage.setItem('token', response.data.token)
+      return true
     })
     .catch(e => e.response.data)
 }
