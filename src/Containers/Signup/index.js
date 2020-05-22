@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { toast } from 'react-toastify'
+
+// * Component
+import SignupView from '../../Views/SignupView'
 
 // * Custom Hooks
 import { CheckIfTokenExists } from '../../Hooks/TokenHook'
-import { useHistory } from 'react-router-dom'
 
 // * Api calls
 import { RegisterAPI } from '../../Api/User'
-import SignupView from '../../Views/SignupView'
+
+// * Validations
+import { RegisterValidations } from '../../Helpers/Validations'
 
 export default props => {
   const [firstName, setFirstName] = useState('')
@@ -22,6 +28,19 @@ export default props => {
   CheckIfTokenExists()
 
   const signupUser = () => {
+    let error = RegisterValidations(
+      firstName,
+      lastName,
+      email,
+      password,
+      address,
+      town,
+      postcode
+    )
+    if (error) {
+      toast.error(error)
+      return
+    }
     RegisterAPI({
       firstName,
       lastName,

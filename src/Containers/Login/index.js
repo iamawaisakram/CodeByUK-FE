@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { toast } from 'react-toastify'
+
+// * Components
+import LoginView from '../../Views/LoginView'
 
 // * Custom Hooks
 import { CheckIfTokenExists } from '../../Hooks/TokenHook'
 
 // * Api calls
 import { LoginAPI } from '../../Api/User'
-import LoginView from '../../Views/LoginView'
+
+// * Validations
+import { LoginValidations } from '../../Helpers/Validations'
 
 export default props => {
   const [email, setEmail] = useState('')
@@ -16,6 +22,11 @@ export default props => {
   CheckIfTokenExists()
 
   const loginUser = async () => {
+    let error = LoginValidations(email, password)
+    if (error) {
+      toast.error(error)
+      return
+    }
     let result = await LoginAPI({ email, password })
     if (result) history.push('/')
   }
