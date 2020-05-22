@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
+import { useSetRecoilState } from 'recoil'
+
+// * Atoms
+import { DataEntriesAtom, TestResultsAtom } from '../../Recoil/Data/Atoms'
+
+// * API Calls
+import { AddDataAPI, GetTestResultsAPI } from '../../Api/Data'
 
 // * style
 import './index.css'
-import { AddDataAPI, GetTestResultsAPI } from '../../Api/Data'
-import { useSetRecoilState } from 'recoil'
-import { DataEntriesAtom, TestResultsAtom } from '../../Recoil/Data/Atoms'
 
 export default props => {
   const [dataEntry, setDataEntry] = useState(0)

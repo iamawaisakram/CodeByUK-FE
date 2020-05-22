@@ -1,5 +1,39 @@
 #reminders {
   width: 48%;
   height: 240px;
-  background-color: #eee;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+#reminders .title-div {
+  width: 100%;
+  background-color: #f6f6f6;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+#reminders .reminders-result {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+#reminders .reminders-result .entry {
+  width: 95%;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#reminders .reminders-result .entry .date {
+  padding: 5px 10px;
 }
