@@ -1,13 +1,11 @@
 import { selector } from 'recoil'
 
-// * Atoms
-import { textState } from './Atoms'
+// * API Calls
+import { GetAllUsersAPI } from '../../Api/User'
 
-export const charCountState = selector({
-  key: 'charCountState', // * unique ID (with respect to other atoms/selectors)
-  get: ({ get }) => {
-    const text = get(textState)
-
-    return text.length
+export const GetAllUserQuery = selector({
+  key: 'getAllUsersQuery',
+  get: async ({ get }) => {
+    return await GetAllUsersAPI()
   }
 })

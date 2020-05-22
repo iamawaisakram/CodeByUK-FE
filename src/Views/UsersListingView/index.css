@@ -1,0 +1,72 @@
+#users-listing {
+  width: 80%;
+  height: 380px;
+  margin-top: 40px;
+  background-color: #fff;
+
+  border-radius: 10px;
+}
+
+#users-listing .title-div {
+  width: 100%;
+  background-color: #f6f6f6;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+#users-listing .title-div .input {
+  width: 20%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  padding: 0px 10px;
+  margin: 0px 10px;
+}
+
+#users-listing .title-div .input:focus {
+  outline: none;
+}
+
+#users-listing .title-div .submit-btn {
+  width: 10%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: #90f99c;
+  padding: 0px 10px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+#users-listing .title-div .submit-btn:focus {
+  outline: none;
+}
+
+#users-listing .users-listing-result {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+}
+#users-listing .users-listing-result .entry {
+  width: 95%;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#users-listing .users-listing-result .entry .date {
+  padding: 5px 10px;
+  width: 30%;
+  text-align: center;
+}

@@ -22,7 +22,7 @@ export const RegisterAPI = data => {
 }
 
 export const GetAllUsersAPI = () => {
-  AxiosWrapper.GET(UserRoutes.ALL)
+  return AxiosWrapper.GET(UserRoutes.ALL)
     .then(response => response.data.users)
     .catch(e => console.log(e.response.data))
 }
