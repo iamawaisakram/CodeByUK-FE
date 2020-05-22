@@ -15,7 +15,17 @@ ReactDOM.render(
     <RecoilRoot>
       <React.Suspense fallback={<div>Loading...</div>}>
         <Routes />
-        <ToastContainer />
+        <ToastContainer
+          position='top-right'
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </React.Suspense>
     </RecoilRoot>
   </React.StrictMode>,
