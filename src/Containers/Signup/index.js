@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 
 // * Custom Hooks
 import { CheckIfTokenExists } from '../../Hooks/TokenHook'
+import { useHistory } from 'react-router-dom'
 
 // * Api calls
 import { RegisterAPI } from '../../Api/User'
+import SignupView from '../../Views/SignupView'
 
 export default props => {
   const [firstName, setFirstName] = useState('')
@@ -17,6 +18,7 @@ export default props => {
   const [postcode, setPostcode] = useState('')
 
   let history = useHistory()
+
   CheckIfTokenExists()
 
   const signupUser = () => {
@@ -31,60 +33,30 @@ export default props => {
     })
   }
 
+  const handleLogin = () => {
+    history.push('/login')
+  }
+
   return (
     <div id='signup'>
-      <input
-        type='text'
-        className='firstName'
-        value={firstName}
-        placeholder='firstName'
-        onChange={e => setFirstName(e.target.value)}
+      <SignupView
+        firstName={firstName}
+        lastName={lastName}
+        email={email}
+        password={password}
+        address={address}
+        town={town}
+        postcode={postcode}
+        setFirstName={setFirstName}
+        setLastName={setLastName}
+        setEmail={setEmail}
+        setPassword={setPassword}
+        setAddress={setAddress}
+        setTown={setTown}
+        setPostcode={setPostcode}
+        signupUser={signupUser}
+        handleLogin={handleLogin}
       />
-      <input
-        type='text'
-        className='lastName'
-        value={lastName}
-        placeholder='lastName'
-        onChange={e => setLastName(e.target.value)}
-      />
-      <input
-        type='text'
-        className='email'
-        value={email}
-        placeholder='Email'
-        onChange={e => setEmail(e.target.value)}
-      />
-      <input
-        type='text'
-        className='password'
-        value={password}
-        placeholder='Password'
-        onChange={e => setPassword(e.target.value)}
-      />
-      <input
-        type='text'
-        className='address'
-        value={address}
-        placeholder='address'
-        onChange={e => setAddress(e.target.value)}
-      />
-      <input
-        type='text'
-        className='town'
-        value={town}
-        placeholder='town'
-        onChange={e => setTown(e.target.value)}
-      />
-      <input
-        type='text'
-        className='postcode'
-        value={postcode}
-        placeholder='postcode'
-        onChange={e => setPostcode(e.target.value)}
-      />
-      <button onClick={() => signupUser()} className='submit'>
-        Login
-      </button>
     </div>
   )
 }

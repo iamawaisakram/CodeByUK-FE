@@ -6,6 +6,7 @@ import { CheckIfTokenExists } from '../../Hooks/TokenHook'
 
 // * Api calls
 import { LoginAPI } from '../../Api/User'
+import LoginView from '../../Views/LoginView'
 
 export default props => {
   const [email, setEmail] = useState('')
@@ -19,25 +20,19 @@ export default props => {
     if (result) history.push('/')
   }
 
+  const handleRegister = () => {
+    history.push('/signup')
+  }
+
   return (
-    <div id='login'>
-      <input
-        type='text'
-        className='email'
-        value={email}
-        placeholder='Email'
-        onChange={e => setEmail(e.target.value)}
-      />
-      <input
-        type='text'
-        className='password'
-        value={password}
-        placeholder='Password'
-        onChange={e => setPassword(e.target.value)}
-      />
-      <button onClick={() => loginUser()} className='submit'>
-        Login
-      </button>
-    </div>
+    <LoginView
+      {...props}
+      loginUser={loginUser}
+      password={password}
+      setPassword={setPassword}
+      email={email}
+      setEmail={setEmail}
+      handleRegister={handleRegister}
+    />
   )
 }

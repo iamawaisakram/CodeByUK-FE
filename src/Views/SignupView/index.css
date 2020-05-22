@@ -1,0 +1,74 @@
+#signup {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#signup .background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+#signup .input-container {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#signup .input-container .logo {
+  width: 60%;
+  height: 10%;
+}
+
+#signup .input-container .sub-head {
+  font-size: 26px;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+
+#signup .input-container .input {
+  width: 45%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  padding: 0px 10px;
+  margin: 5px 0;
+}
+#signup .input-container .input:focus {
+  outline: none;
+}
+
+#signup .input-container .submit-btn {
+  width: 45%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: #90f99c;
+  padding: 0px 10px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+#signup .input-container .submit-btn:focus {
+  outline: none;
+}
+
+#signup .input-container .login-btn {
+  width: 45%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: transparent;
+  margin: 10px 0px;
+  cursor: pointer;
+}
+
+#signup .input-container .login-btn:focus {
+  outline: none;
+}

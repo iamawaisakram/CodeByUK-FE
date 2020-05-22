@@ -1,0 +1,74 @@
+#login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login .background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+}
+
+#login .input-container {
+  z-index: 11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#login .input-container .logo {
+  width: 60%;
+  height: 10%;
+}
+
+#login .input-container .sub-head {
+  font-size: 26px;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+
+#login .input-container .input {
+  width: 45%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  padding: 0px 10px;
+  margin: 5px 0;
+}
+
+#login .input-container .input:focus {
+  outline: none;
+}
+
+#login .input-container .submit-btn {
+  width: 45%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: #90f99c;
+  padding: 0px 10px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+#login .input-container .submit-btn:focus {
+  outline: none;
+}
+
+#login .input-container .register-btn {
+  width: 45%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: transparent;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#login .input-container .register-btn:focus {
+  outline: none;
+}
