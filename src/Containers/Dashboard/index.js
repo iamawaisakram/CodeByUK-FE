@@ -3,8 +3,9 @@ import React, { useState, useEffect } from 'react'
 // * HitoryHook
 import TokenHook from '../../Hooks/TokenHook'
 
-// * Components
+// * View Components
 import LoadingView from '../../Views/LoadingView'
+import DashboardView from '../../Views/DashboardView'
 
 export default props => {
   const [loading, setLoadingValue] = useState(true)
@@ -15,5 +16,5 @@ export default props => {
   }, [result])
 
   if (loading) return <LoadingView />
-  return <div id='login'>Dashboard</div>
+  return <DashboardView {...props} />
 }
