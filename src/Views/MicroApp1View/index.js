@@ -2,10 +2,15 @@ import React, { useEffect } from 'react'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
 
 // * Atoms and Selectors
-import { DataEntriesAtom, ReminderEntriesAtom } from '../../Recoil/Data/Atoms'
+import {
+  DataEntriesAtom,
+  ReminderEntriesAtom,
+  TestResultsAtom
+} from '../../Recoil/Data/Atoms'
 import {
   GetDataEntriesQuery,
-  GetReminderEntriesQuery
+  GetReminderEntriesQuery,
+  GetTestResultsQuery
 } from '../../Recoil/Data/Selectors'
 
 // * View Components
@@ -18,9 +23,11 @@ import UsersListingView from '../UsersListingView'
 export default props => {
   let setDataEntries = useSetRecoilState(DataEntriesAtom)
   let setReminderEntries = useSetRecoilState(ReminderEntriesAtom)
+  let setTestResults = useSetRecoilState(TestResultsAtom)
 
   setDataEntries(useRecoilValue(GetDataEntriesQuery))
   setReminderEntries(useRecoilValue(GetReminderEntriesQuery))
+  setTestResults(useRecoilValue(GetTestResultsQuery))
 
   return (
     <div id='micrp-app-1'>

@@ -33,3 +33,11 @@ export const GetReminderEntriesAPI = () => {
       return []
     })
 }
+
+export const GetTestResultsAPI = () => {
+  return AxiosWrapper.GET(DataRoutes.GET_TEST_RESULTS)
+    .then(response => response.data.result)
+    .catch(e => {
+      console.log(e.response.data)
+    })
+}
