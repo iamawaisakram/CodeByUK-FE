@@ -1,0 +1,9 @@
+#micrp-app-1 {
+  width: 80%;
+  height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 22px;
+}

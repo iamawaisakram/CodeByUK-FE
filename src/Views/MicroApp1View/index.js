@@ -20,6 +20,9 @@ import LogBookView from '../LogbookView'
 import RemindersView from '../RemindersView'
 import UsersListingView from '../UsersListingView'
 
+// * Style
+import './index.css'
+
 export default props => {
   let setDataEntries = useSetRecoilState(DataEntriesAtom)
   let setReminderEntries = useSetRecoilState(ReminderEntriesAtom)
@@ -37,7 +40,7 @@ export default props => {
         <LogBookView />
         <RemindersView />
       </>
-      <UsersListingView />
+      {/* <UsersListingView /> */}
     </div>
   )
 }

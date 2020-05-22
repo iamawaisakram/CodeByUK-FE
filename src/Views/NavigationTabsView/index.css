@@ -1,0 +1,56 @@
+#topbar {
+  height: 75px;
+  width: 100%;
+  background-color: #d3ddf8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#topbar .logo {
+  height: 50%;
+  width: 20%;
+}
+
+#topbar .logout {
+  height: 40%;
+  width: 8%;
+  border-radius: 15px;
+  border: none;
+  background-color: #fff;
+  padding: 0px 10px;
+  margin: 15px 20px;
+  cursor: pointer;
+}
+
+#topbar .logout:focus {
+  outline: none;
+}
+
+#topbar .tabs-container {
+  width: 60%;
+  margin-top: 5.5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#topbar .tabs-container .tab {
+  width: 15%;
+  height: 20%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#topbar .tabs-container .tab:focus {
+  outline: none;
+}
+
+#topbar .tabs-container .tab p {
+  color: #fff;
+  padding: 5px;
+  font-size: 14px;
+}

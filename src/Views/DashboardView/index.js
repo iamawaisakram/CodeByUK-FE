@@ -5,12 +5,17 @@ import NavigationTabsView from '../NavigationTabsView'
 import SidebarView from '../SidebarView'
 import MicroApp1View from '../MicroApp1View'
 
+// * style
+import './index.css'
+
 export default props => {
   return (
     <div id='dashboard'>
       <NavigationTabsView />
-      <SidebarView />
-      <MicroApp1View />
+      <div className='dash-body'>
+        <SidebarView />
+        <MicroApp1View />
+      </div>
     </div>
   )
 }
