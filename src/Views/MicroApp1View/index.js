@@ -34,12 +34,12 @@ export default props => {
 
   return (
     <div id='micrp-app-1'>
-      <>
+      <div className='home'>
         <TestResultsView />
         <AddDataView />
         <LogBookView />
         <RemindersView />
-      </>
+      </div>
       {/* <UsersListingView /> */}
     </div>
   )
