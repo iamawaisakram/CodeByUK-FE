@@ -14,9 +14,18 @@ export default props => {
   const setDataEntryValues = useSetRecoilState(DataEntriesAtom)
 
   const handleSubmit = async () => {
-    let result = await AddDataAPI({ value: dataEntry, logbookEntry })
-    setDataEntryValues(result)
-    setTestResults(await GetTestResultsAPI())
+    try {
+      if (dataEntry && logbookEntry) {
+        let result = await AddDataAPI({ value: dataEntry, logbookEntry })
+        setDataEntryValues(result)
+        setTestResults(await GetTestResultsAPI())
+      } else {
+        // TODO: Add Error Notification
+        alert('values missing')
+      }
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
