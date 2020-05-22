@@ -45,6 +45,20 @@
 #users-listing .title-div .submit-btn:focus {
   outline: none;
 }
+#users-listing .title-div .reset-btn {
+  width: 10%;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  background-color: tomato;
+  padding: 0px 10px;
+  margin: 15px 5px;
+  cursor: pointer;
+}
+
+#users-listing .title-div .reset-btn:focus {
+  outline: none;
+}
 
 #users-listing .users-listing-result {
   width: 100%;
