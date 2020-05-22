@@ -24,6 +24,7 @@ import UsersListingView from '../UsersListingView'
 import './index.css'
 
 export default props => {
+  // TODO: Try to move these calls down to the elements
   let setDataEntries = useSetRecoilState(DataEntriesAtom)
   let setReminderEntries = useSetRecoilState(ReminderEntriesAtom)
   let setTestResults = useSetRecoilState(TestResultsAtom)

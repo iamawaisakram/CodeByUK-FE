@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useRecoilState } from 'recoil'
 
 // * Atoms
@@ -27,6 +27,7 @@ export default props => {
         <div className='latest-div-1'>
           <div className='latest-div'>
             <p className='latest'>{testResults.latest}</p>
+            <p className='latest-desc'>Your Last Test Result</p>
           </div>
         </div>
         <div className='max-container'>
