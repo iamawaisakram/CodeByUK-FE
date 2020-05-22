@@ -9,6 +9,7 @@ import LoadingView from '../../Views/LoadingView'
 export default props => {
   const [loading, setLoadingValue] = useState(true)
   let result = TokenHook()
+
   useEffect(() => {
     setLoadingValue(result)
   }, [result])
