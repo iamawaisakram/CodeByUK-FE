@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // * Config File
-import { SERVER_URL } from '../../config'
+import { SERVER_URL } from '../../Config'
 
 // *********************** GET TOKEN SAVED AFTER LOGIN
 const GetToken = () => {

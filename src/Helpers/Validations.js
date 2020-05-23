@@ -8,6 +8,16 @@ export const LoginValidations = (email, password) => {
   }
 }
 
+export const AddValueValidations = (dataEntry, logbookEntry) => {
+  if (!dataEntry) {
+    return 'Entry Value is Required!'
+  }
+
+  if (!logbookEntry) {
+    return 'Entry Description is Required!'
+  }
+}
+
 export const RegisterValidations = (
   firstName,
   lastName,

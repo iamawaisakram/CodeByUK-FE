@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useSetRecoilState } from 'recoil'
+import { toast } from 'react-toastify'
 
 // * Atoms
 import { DataEntriesAtom, TestResultsAtom } from '../../Recoil/Data/Atoms'
@@ -9,6 +10,7 @@ import { AddDataAPI, GetTestResultsAPI } from '../../Api/Data'
 
 // * style
 import './index.css'
+import { AddValueValidations } from '../../Helpers/Validations'
 
 export default props => {
   const [dataEntry, setDataEntry] = useState(0)
@@ -18,18 +20,14 @@ export default props => {
   const setDataEntryValues = useSetRecoilState(DataEntriesAtom)
 
   const handleSubmit = async () => {
-    try {
-      if (dataEntry && logbookEntry) {
-        let result = await AddDataAPI({ value: dataEntry, logbookEntry })
-        setDataEntryValues(result)
-        setTestResults(await GetTestResultsAPI())
-      } else {
-        // TODO: Add Error Notification
-        alert('values missing')
-      }
-    } catch (error) {
-      console.log(error)
+    let error = AddValueValidations(dataEntry, logbookEntry)
+    if (error) {
+      toast.error(error)
+      return
     }
+    let result = await AddDataAPI({ value: dataEntry, logbookEntry })
+    setDataEntryValues(result)
+    setTestResults(await GetTestResultsAPI())
   }
 
   return (
